@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Onnayi Tours - Kerala and international tour packages with custom plans, hotel stays, transport and 24/7 support." />
+  <title>Onnayi Tours - Travel Packages</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #0b91b4;
+      --primary-dark: #076d89;
+      --primary-soft: #e7f9ff;
+      --accent: #ff9f1c;
+      --accent-soft: #fff3dc;
+      --green: #16a34a;
+      --green-soft: #eafaf1;
+      --danger: #dc2626;
+      --dark: #073b4c;
+      --text: #102033;
+      --muted: #64748b;
+      --soft: #f6f8fb;
+      --soft-blue: #eef8fc;
+      --card: #ffffff;
+      --border: #e5eaf0;
+      --shadow-sm: 0 10px 24px rgba(20, 80, 110, 0.08);
+      --shadow-md: 0 20px 50px rgba(20, 80, 110, 0.13);
+      --shadow-lg: 0 34px 90px rgba(20, 80, 110, 0.23);
+      --radius-lg: 34px;
+      --radius-md: 22px;
+      --radius-sm: 14px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans Malayalam", Inter, Arial, sans-serif;
+      background: #f3f8fb;
+      color: var(--text);
+    }
+
+    button,
+    input,
+    select {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .desktop-page {
+      min-height: 100vh;
+      padding: 22px;
+      background:
+        radial-gradient(circle at top left, rgba(11, 145, 180, 0.22), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(255, 159, 28, 0.16), transparent 34%),
+        linear-gradient(135deg, #edf9ff, #fffaf3);
+    }
+
+    .desktop-shell {
+      max-width: 1240px;
+      margin: auto;
+    }
+
+    .top-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      color: #536779;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 8px 6px 16px;
+    }
+
+    .top-strip span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .navbar {
+      min-height: 76px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(226, 238, 247, 0.95);
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 14px 22px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 30px;
+      position: sticky;
+      top: 14px;
+      z-index: 20;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 950;
+      font-size: 20px;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), #16c79a);
+      display: grid;
+      place-items: center;
+      color: white;
+      box-shadow: 0 12px 24px rgba(11, 145, 180, 0.28);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      color: #607080;
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-call {
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--dark);
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 900;
+    }
+
+    .nav-btn,
+    .primary-btn,
+    .booking-price button,
+    .book-btn,
+    .mobile-book-bar button,
+    .footer-newsletter button {
+      border: none;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      font-weight: 950;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(11, 145, 180, 0.25);
+      transition: 0.25s ease;
+    }
+
+    .nav-btn {
+      padding: 12px 20px;
+      border-radius: 999px;
+    }
+
+    .nav-btn:hover,
+    .booking-price button:hover,
+    .book-btn:hover,
+    .mobile-book-bar button:hover,
+    .footer-newsletter button:hover,
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 38px rgba(11, 145, 180, 0.35);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 26px;
+      margin-bottom: 26px;
+    }
+
+    .hero-left {
+      min-height: 520px;
+      border-radius: 38px;
+      padding: 42px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      background-image:
+        linear-gradient(120deg, rgba(3, 56, 77, 0.96), rgba(3, 56, 77, 0.44)),
+        url("https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=1400&q=80");
+      background-size: cover;
+      background-position: center;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-left::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(255,255,255,0.18), transparent 24%),
+        radial-gradient(circle at 75% 85%, rgba(255,159,28,0.28), transparent 28%);
+    }
+
+    .hero-left > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      width: fit-content;
+      padding: 9px 15px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(12px);
+      font-weight: 900;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+
+    .hero-left h1 {
+      margin: 0;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.16;
+      max-width: 720px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-left p {
+      margin: 20px 0 30px;
+      max-width: 640px;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 16px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      padding: 15px 22px;
+      border-radius: 18px;
+      border: none;
+      font-weight: 950;
+    }
+
+    .primary-btn {
+      background: linear-gradient(135deg, var(--accent), #ffbd59);
+      color: #172033;
+      box-shadow: 0 16px 32px rgba(255, 159, 28, 0.28);
+    }
+
+    .secondary-btn {
+      border: 1px solid rgba(255,255,255,0.26);
+      background: rgba(255, 255, 255, 0.14);
+      color: white;
+      backdrop-filter: blur(12px);
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .trust-card {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .trust-card strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 3px;
+    }
+
+    .trust-card span {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .hero-right,
+    .detail-box,
+    .itinerary-box,
+    .info-section,
+    .testimonial-card,
+    .faq-card {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(226, 238, 247, 0.95);
+      border-radius: 38px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-right {
+      padding: 26px;
+    }
+
+    .booking-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .booking-title h2 {
+      margin: 0;
+      color: var(--dark);
+      font-size: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    .booking-title p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .booking-title span {
+      background: #e7f9ff;
+      color: var(--primary);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .quick-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .form-row {
+      background: #f6fafc;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 15px 16px;
+      transition: 0.2s ease;
+    }
+
+    .form-row:hover {
+      background: white;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(20, 80, 110, 0.08);
+    }
+
+    .form-row label {
+      display: block;
+      font-size: 12px;
+      color: #718090;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .form-row strong {
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .booking-price {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at top right, rgba(255,159,28,0.22), transparent 35%),
+        linear-gradient(135deg, #e9f9ff, #fff5e0);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .booking-price strong {
+      display: block;
+      font-size: 32px;
+      color: var(--dark);
+      letter-spacing: -0.04em;
+    }
+
+    .booking-price small {
+      color: #657488;
+      font-weight: 700;
+    }
+
+    .booking-price button {
+      padding: 14px 20px;
+      border-radius: 18px;
+      white-space: nowrap;
+    }
+
+    .support-card {
+      margin-top: 16px;
+      border: 1px dashed #b6dfea;
+      border-radius: 22px;
+      padding: 16px;
+      background: #f3fbfe;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .support-card strong {
+      color: var(--dark);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .support-card span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .support-card .icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 34px 0 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      color: var(--dark);
+      font-size: 34px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 7px 0 0;
+      color: var(--muted);
+    }
+
+    .section-link {
+      color: var(--primary);
+      font-weight: 950;
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .package-card {
+      border: none;
+      min-height: 290px;
+      border-radius: 30px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: left;
+      cursor: pointer;
+      box-shadow: 0 22px 50px rgba(20, 80, 110, 0.17);
+      transition: 0.28s ease;
+    }
+
+    .package-card:hover,
+    .package-card.active {
+      transform: translateY(-8px) scale(1.015);
+      box-shadow: 0 32px 76px rgba(20, 80, 110, 0.25);
+    }
+
+    .package-card.active {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .package-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.04), rgba(0,0,0,0.86)),
+        linear-gradient(135deg, rgba(11,145,180,0.18), rgba(255,159,28,0.14));
+    }
+
+    .package-card-content {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      z-index: 2;
+    }
+
+    .package-card h3 {
+      margin: 0 0 7px;
+      font-size: 21px;
+      line-height: 1.3;
+    }
+
+    .package-card p {
+      margin: 0 0 14px;
+      font-size: 13px;
+      opacity: 0.92;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 950;
+      flex-wrap: wrap;
+    }
+
+    .card-meta span {
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      backdrop-filter: blur(8px);
+    }
+
+    .details-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      margin-bottom: 34px;
+    }
+
+    .detail-box,
+    .itinerary-box {
+      padding: 26px;
+    }
+
+    .detail-box h2,
+    .itinerary-box h2,
+    .info-section h2,
+    .faq-card h2 {
+      margin: 0 0 20px;
+      color: var(--dark);
+      font-size: 28px;
+      letter-spacing: -0.03em;
+    }
+
+    .detail-box p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .detail-image {
+      height: 310px;
+      border-radius: 28px;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .detail-chip {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: white;
+      color: var(--primary);
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: 12px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .highlight {
+      background: #f6fafc;
+      border: 1px solid var(--border);
+      padding: 15px;
+      border-radius: 20px;
+      font-weight: 900;
+      color: #39495a;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 36px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 11px;
+      top: 8px;
+      bottom: 8px;
+      border-left: 2px dashed #ccd8e0;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 26px;
+    }
+
+    .timeline-icon {
+      position: absolute;
+      left: -36px;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      background: white;
+      box-shadow: 0 0 0 5px #fff5e0;
+    }
+
+    .timeline-item:last-child .timeline-icon {
+      border-color: var(--green);
+      box-shadow: 0 0 0 5px #e9fff8;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin: 16px 0 34px;
+    }
+
+    .info-section {
+      padding: 22px;
+      border-radius: 28px;
+    }
+
+    .info-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .info-section h3 {
+      margin: 0 0 8px;
+      color: var(--dark);
+    }
+
+    .info-section p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 34px;
+    }
+
+    .testimonial-card {
+      padding: 22px;
+      border-radius: 28px;
+    }
+
+    .testimonial-card p {
+      margin: 0 0 18px;
+      color: #425466;
+      line-height: 1.75;
+    }
+
+    .testimonial-user {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+
+    .testimonial-user strong {
+      display: block;
+      color: var(--dark);
+    }
+
+    .testimonial-user span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .faq-card {
+      padding: 26px;
+      margin-bottom: 34px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      background: #f8fbfd;
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .faq-item strong {
+      display: block;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .faq-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .cta-section {
+      margin-bottom: 0;
+      border-radius: 34px 34px 0 0;
+      padding: 34px;
+      color: white;
+      background:
+        radial-gradient(circle at top right, rgba(255, 159, 28, 0.38), transparent 28%),
+        linear-gradient(135deg, var(--primary-dark), var(--dark));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .cta-section h2 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      letter-spacing: -0.03em;
+    }
+
+    .cta-section p {
+      margin: 0;
+      color: rgba(255,255,255,0.84);
+      line-height: 1.7;
+    }
+
+    .cta-section button {
+      border: none;
+      padding: 15px 22px;
+      border-radius: 18px;
+      background: var(--accent);
+      color: #172033;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .footer {
+      background: #111827;
+      color: white;
+      border-radius: 0 0 34px 34px;
+      padding: 38px 34px 22px;
+      margin-bottom: 22px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr 0.8fr 1.1fr;
+      gap: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 14px;
+      font-weight: 950;
+      font-size: 20px;
+    }
+
+    .footer-brand .logo-mark {
+      width: 40px;
+      height: 40px;
+      box-shadow: none;
+    }
+
+    .footer p,
+    .footer li {
+      color: #b9c2d0;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .footer h3 {
+      margin: 0 0 14px;
+      font-size: 16px;
+    }
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 9px;
+    }
+
+    .footer-newsletter {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .footer-newsletter input {
+      min-width: 0;
+      flex: 1;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: white;
+      border-radius: 14px;
+      padding: 13px 14px;
+      outline: none;
+    }
+
+    .footer-newsletter input::placeholder {
+      color: #94a3b8;
+    }
+
+    .footer-newsletter button {
+      border-radius: 14px;
+      padding: 12px 14px;
+      box-shadow: none;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding-top: 20px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+    }
+
+    .socials span {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.08);
+      color: white;
+    }
+
+    /* ================= MOBILE ================= */
+
+    .mobile-page {
+      display: none;
+      min-height: 100vh;
+      background: #f4f9fc;
+      padding-bottom: 104px;
+    }
+
+    .mobile-top {
+      background:
+        linear-gradient(to bottom, rgba(3, 56, 77, 0.45), rgba(3, 56, 77, 0.96)),
+        url("https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=900&q=80");
+      background-size: cover;
+      background-position: center;
+      min-height: 330px;
+      padding: 18px;
+      color: white;
+      position: relative;
+      border-bottom-left-radius: 34px;
+      border-bottom-right-radius: 34px;
+      box-shadow: 0 18px 45px rgba(20, 80, 110, 0.16);
+    }
+
+    .mobile-status {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 950;
+      margin-bottom: 32px;
+    }
+
+    .mobile-brand {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(12px);
+      font-weight: 950;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .mobile-top h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.24;
+      letter-spacing: -0.04em;
+    }
+
+    .mobile-top p {
+      margin: 12px 0 20px;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .mobile-search {
+      background: rgba(255,255,255,0.96);
+      color: #6b7b8d;
+      border-radius: 20px;
+      padding: 15px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    .mobile-quick {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .mobile-quick div {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 14px 10px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mobile-quick strong {
+      display: block;
+      color: var(--dark);
+      margin-top: 6px;
+      font-size: 13px;
+    }
+
+    .mobile-section {
+      padding: 8px 16px 0;
+    }
+
+    .mobile-section h2 {
+      margin: 0 0 14px;
+      color: var(--dark);
+      font-size: 24px;
+      letter-spacing: -0.03em;
+    }
+
+    .mobile-cards {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      padding: 4px 0 10px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .mobile-cards::-webkit-scrollbar {
+      display: none;
+    }
+
+    .mobile-package {
+      min-width: 230px;
+      height: 270px;
+      border: none;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: left;
+      cursor: pointer;
+      box-shadow: 0 18px 42px rgba(20, 80, 110, 0.18);
+      scroll-snap-align: start;
+    }
+
+    .mobile-package::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.04), rgba(0,0,0,0.86)),
+        linear-gradient(135deg, rgba(11,145,180,0.18), rgba(255,159,28,0.15));
+    }
+
+    .mobile-package.active {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .mobile-package-content {
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      z-index: 2;
+    }
+
+    .mobile-package-content h3 {
+      margin: 0 0 6px;
+      font-size: 19px;
+      line-height: 1.28;
+    }
+
+    .mobile-package-content p {
+      margin: 0 0 11px;
+      font-size: 12.5px;
+      opacity: 0.92;
+    }
+
+    .mobile-tabs {
+      margin: 20px 16px 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: #eaf2f6;
+      padding: 5px;
+      border-radius: 20px;
+    }
+
+    .mobile-tab {
+      border: none;
+      background: transparent;
+      padding: 11px 6px;
+      border-radius: 16px;
+      color: #657488;
+      font-weight: 950;
+      cursor: pointer;
+    }
+
+    .mobile-tab.active {
+      background: white;
+      color: var(--primary);
+      box-shadow: 0 10px 22px rgba(20, 80, 110, 0.1);
+    }
+
+    .mobile-details {
+      margin: 16px;
+      background: white;
+      border-radius: 30px;
+      padding: 17px;
+      box-shadow: 0 18px 48px rgba(20, 80, 110, 0.11);
+      border: 1px solid var(--border);
+    }
+
+    .mobile-panel {
+      display: none;
+    }
+
+    .mobile-panel.active {
+      display: block;
+      animation: fadeUp 0.28s ease;
+    }
+
+    .mobile-detail-image {
+      height: 190px;
+      border-radius: 24px;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 15px;
+    }
+
+    .mobile-details h3 {
+      margin: 0 0 9px;
+      color: var(--dark);
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .mobile-details p {
+      margin: 0;
+      color: #68788a;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .mobile-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .mobile-list div {
+      padding: 13px;
+      border-radius: 18px;
+      background: #f6fafc;
+      border: 1px solid var(--border);
+      color: #405164;
+      font-weight: 850;
+      font-size: 14px;
+    }
+
+    .mobile-footer {
+      margin: 24px 16px 0;
+      padding: 24px;
+      border-radius: 28px;
+      background: #111827;
+      color: white;
+    }
+
+    .mobile-footer h3 {
+      margin: 0 0 8px;
+    }
+
+    .mobile-footer p {
+      margin: 0 0 16px;
+      color: #b9c2d0;
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+    .mobile-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .mobile-footer-links span {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      color: #dbe4ef;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .mobile-book-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 13px 16px 19px;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 -12px 34px rgba(0, 0, 0, 0.09);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      z-index: 20;
+    }
+
+    .mobile-book-bar strong {
+      display: block;
+      color: var(--dark);
+      font-size: 22px;
+      letter-spacing: -0.04em;
+    }
+
+    .mobile-book-bar small {
+      color: #657488;
+      font-weight: 700;
+    }
+
+    .mobile-book-bar button {
+      padding: 14px 20px;
+      border-radius: 18px;
+      white-space: nowrap;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1050px) {
+      .package-grid,
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero,
+      .details-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-left {
+        min-height: 450px;
+      }
+
+      .nav-links,
+      .nav-call {
+        display: none;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .desktop-page {
+        display: none;
+      }
+
+      .mobile-page {
+        display: block;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .desktop-page {
+        display: block;
+      }
+
+      .mobile-page {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="desktop-page">
+    <div class="desktop-shell">
+
+      <div class="top-strip">
+        <span>📍 Kerala based tour support</span>
+        <span>📞 +91 98765 43210</span>
+      </div>
+
+      <nav class="navbar">
+        <a class="logo" href="#">
+          <div class="logo-mark">O</div>
+          ONNAYI TOURS
+        </a>
+
+        <div class="nav-links">
+          <a href="#packages">Packages</a>
+          <a href="#details">Details</a>
+          <a href="#why">Why Us</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#faq">FAQ</a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="nav-call">WhatsApp</button>
+          <button class="nav-btn">Enquire Now</button>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <div class="hero-left">
+          <div>
+            <span class="hero-badge">Kerala & International Tour Packages</span>
+
+            <h1>നിങ്ങളുടെ അടുത്ത യാത്ര ഇവിടെ നിന്ന് തുടങ്ങാം</h1>
+
+            <p>
+              ഫാമിലി ട്രിപ്പ്, ഹണിമൂൺ പാക്കേജ്, ഹൗസ്‌ബോട്ട്, ഹിൽ സ്റ്റേഷൻ,
+              ദുബായ് ടൂർ തുടങ്ങിയ യാത്രകൾക്ക് കസ്റ്റമൈസ്ഡ് പാക്കേജുകൾ.
+            </p>
+
+            <div class="hero-actions">
+              <button class="primary-btn" onclick="document.getElementById('packages').scrollIntoView()">പാക്കേജുകൾ കാണാം</button>
+              <button class="secondary-btn">WhatsApp Enquiry</button>
+            </div>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-card">
+              <strong>4.8★</strong>
+              <span>Customer rating</span>
+            </div>
+            <div class="trust-card">
+              <strong>24/7</strong>
+              <span>Travel support</span>
+            </div>
+            <div class="trust-card">
+              <strong>100+</strong>
+              <span>Custom trips planned</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="booking-title">
+            <div>
+              <h2>Quick Travel Enquiry</h2>
+              <p>നിങ്ങൾക്ക് അനുയോജ്യമായ പാക്കേജ് തിരഞ്ഞെടുക്കൂ</p>
+            </div>
+            <span>24/7 Support</span>
+          </div>
+
+          <div class="quick-form">
+            <div class="form-row">
+              <label>Selected Package</label>
+              <strong id="desktopSelectedTitle">കേരളം ടൂർ പാക്കേജ്</strong>
+            </div>
+
+            <div class="form-row">
+              <label>Duration</label>
+              <strong id="desktopSelectedDuration">3 Days / 2 Nights</strong>
+            </div>
+
+            <div class="form-row">
+              <label>Pickup</label>
+              <strong>Kochi / Calicut / Kannur</strong>
+            </div>
+
+            <div class="form-row">
+              <label>Suitable For</label>
+              <strong>Family • Couples • Group Trips</strong>
+            </div>
+          </div>
+
+          <div class="booking-price">
+            <div>
+              <strong id="desktopSelectedPrice">₹8,999</strong>
+              <small>starting price / person</small>
+            </div>
+            <button>Book Ticket</button>
+          </div>
+
+          <div class="support-card">
+            <div>
+              <strong>Need a custom plan?</strong>
+              <span>Tell your destination, budget and travel date.</span>
+            </div>
+            <div class="icon">💬</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-head" id="packages">
+        <div>
+          <h2>Popular Packages</h2>
+          <p>Click a package to view full details</p>
+        </div>
+        <a class="section-link" href="#footer">Contact us →</a>
+      </div>
+
+      <section class="package-grid" id="desktopPackageGrid"></section>
+
+      <section class="details-layout" id="details">
+        <div class="detail-box" id="desktopPackageDetails"></div>
+        <div class="itinerary-box" id="desktopItinerary"></div>
+      </section>
+
+      <div class="section-head" id="why">
+        <div>
+          <h2>Why choose Onnayi Tours?</h2>
+          <p>Simple, safe and custom travel planning for Kerala families and groups.</p>
+        </div>
+      </div>
+
+      <section class="info-grid">
+        <div class="info-section">
+          <div class="info-icon">🧭</div>
+          <h3>Custom itinerary</h3>
+          <p>Plan based on your budget, travel date, family size and preferred places.</p>
+        </div>
+
+        <div class="info-section">
+          <div class="info-icon">🏨</div>
+          <h3>Verified stays</h3>
+          <p>Hotel, resort and houseboat options with clear package inclusions.</p>
+        </div>
+
+        <div class="info-section">
+          <div class="info-icon">🚐</div>
+          <h3>Travel support</h3>
+          <p>Pickup, local transport, driver allowance and route guidance support.</p>
+        </div>
+
+        <div class="info-section">
+          <div class="info-icon">💬</div>
+          <h3>Easy enquiry</h3>
+          <p>Send your plan through WhatsApp and get a quick package suggestion.</p>
+        </div>
+      </section>
+
+      <div class="section-head" id="reviews">
+        <div>
+          <h2>Traveller reviews</h2>
+          <p>Sample testimonials section for your website.</p>
+        </div>
+      </div>
+
+      <section class="testimonial-grid">
+        <div class="testimonial-card">
+          <p>“Package was clear and easy to understand. The itinerary section helped us choose the right plan.”</p>
+          <div class="testimonial-user">
+            <div class="testimonial-avatar"></div>
+            <div>
+              <strong>Arjun P</strong>
+              <span>Family trip</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p>“Good UI for checking price, duration and package includes. Mobile view is very comfortable.”</p>
+          <div class="testimonial-user">
+            <div class="testimonial-avatar"></div>
+            <div>
+              <strong>Nimisha K</strong>
+              <span>Houseboat package</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p>“The quick enquiry card makes the site feel professional. It is easy to contact and book.”</p>
+          <div class="testimonial-user">
+            <div class="testimonial-avatar"></div>
+            <div>
+              <strong>Faisal M</strong>
+              <span>Dubai package</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-card" id="faq">
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <strong>Can I customize the package?</strong>
+            <p>Yes. You can customize destination, pickup point, stay type, food plan and number of days.</p>
+          </div>
+          <div class="faq-item">
+            <strong>Is hotel included in the price?</strong>
+            <p>Each package clearly shows what is included. Hotel, transport and meals can be changed based on budget.</p>
+          </div>
+          <div class="faq-item">
+            <strong>Can I enquire through WhatsApp?</strong>
+            <p>Yes. Use the enquiry button and share destination, date, number of travellers and budget.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div>
+          <h2>Ready to plan your trip?</h2>
+          <p>Choose a package or send your destination. We will help you create a clear travel plan.</p>
+        </div>
+        <button>Start Enquiry</button>
+      </section>
+
+      <footer class="footer" id="footer">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">
+              <div class="logo-mark">O</div>
+              ONNAYI TOURS
+            </div>
+            <p>
+              Kerala and international travel packages for families, couples and groups.
+              Custom plans, hotel stays, transport and enquiry support.
+            </p>
+          </div>
+
+          <div>
+            <h3>Packages</h3>
+            <ul>
+              <li><a href="#packages">Kerala Tour</a></li>
+              <li><a href="#packages">Munnar Honeymoon</a></li>
+              <li><a href="#packages">Alappuzha Houseboat</a></li>
+              <li><a href="#packages">Dubai Tour</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#why">Why Onnayi</a></li>
+              <li><a href="#reviews">Reviews</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#footer">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Contact</h3>
+            <p>Phone: +91 98765 43210<br>Email: admin@onnayi.com<br>Location: Kerala, India</p>
+            <div class="footer-newsletter">
+              <input type="email" placeholder="Enter email" />
+              <button>Send</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 Onnayi Tours. All rights reserved.</span>
+          <div class="socials">
+            <span>f</span>
+            <span>i</span>
+            <span>w</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <main class="mobile-page">
+    <section class="mobile-top">
+      <div class="mobile-status">
+        <span>ONNAYI TOURS</span>
+        <span>☰</span>
+      </div>
+
+      <div class="mobile-brand">✈ Travel Agency</div>
+
+      <h1>യാത്ര പ്ലാൻ ചെയ്യാം</h1>
+
+      <p>
+        Kerala, India, Dubai package details, itinerary, stay and booking support.
+      </p>
+
+      <div class="mobile-search">
+        <span>Search destination or package</span>
+        <strong>⌕</strong>
+      </div>
+    </section>
+
+    <section class="mobile-quick">
+      <div>📍<strong>Pickup</strong></div>
+      <div>🏨<strong>Stay</strong></div>
+      <div>💬<strong>Enquiry</strong></div>
+    </section>
+
+    <section class="mobile-section">
+      <h2>Popular Packages</h2>
+      <div class="mobile-cards" id="mobilePackageCards"></div>
+    </section>
+
+    <section class="mobile-tabs">
+      <button class="mobile-tab active" onclick="showMobileTab('overview', this)">Overview</button>
+      <button class="mobile-tab" onclick="showMobileTab('plan', this)">Plan</button>
+      <button class="mobile-tab" onclick="showMobileTab('include', this)">Includes</button>
+    </section>
+
+    <section class="mobile-details" id="mobileDetails"></section>
+
+    <footer class="mobile-footer">
+      <h3>ONNAYI TOURS</h3>
+      <p>Kerala and international packages with custom planning and travel support.</p>
+      <div class="mobile-footer-links">
+        <span>Kerala</span>
+        <span>Munnar</span>
+        <span>Houseboat</span>
+        <span>Dubai</span>
+      </div>
+    </footer>
+
+    <div class="mobile-book-bar">
+      <div>
+        <strong id="mobilePrice">₹8,999</strong>
+        <small id="mobileDuration">3 Days / 2 Nights</small>
+      </div>
+
+      <button>Book Ticket</button>
+    </div>
+  </main>
+
+  <script>
+    const packages = [
+      {
+        title: "കേരളം ടൂർ പാക്കേജ്",
+        place: "Munnar • Alappuzha • Wayanad",
+        duration: "3 Days / 2 Nights",
+        price: "₹8,999",
+        rating: "★ 4.8",
+        tag: "Family Package",
+        image: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=1200&q=80",
+        description:
+          "മുന്നാർ മലനിരകൾ, ആലപ്പുഴ ഹൗസ്‌ബോട്ട്, വയനാട് നേച്ചർ സ്പോട്ടുകൾ എന്നിവ ഉൾപ്പെടുന്ന ഫാമിലി ഫ്രണ്ട്ലി കേരള പാക്കേജ്.",
+        highlights: ["AC Traveller", "Hotel Stay", "Houseboat Option", "Sightseeing", "24/7 Support"],
+        itinerary: [
+          ["Day 1", "Kochi pickup → Munnar view points → Hotel check-in"],
+          ["Day 2", "Tea garden → Mattupetty Dam → Local sightseeing"],
+          ["Day 3", "Alappuzha houseboat / Wayanad option → Return"]
+        ],
+        includes: ["Hotel accommodation", "Local transport", "Breakfast", "Driver allowance", "Trip coordinator"]
+      },
+      {
+        title: "മുന്നാർ ഹണിമൂൺ പാക്കേജ്",
+        place: "Munnar, Kerala",
+        duration: "2 Days / 1 Night",
+        price: "₹5,499",
+        rating: "★ 4.7",
+        tag: "Couple Special",
+        image: "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?auto=format&fit=crop&w=1200&q=80",
+        description:
+          "തേയിലത്തോട്ടങ്ങൾ, തണുത്ത കാലാവസ്ഥ, പ്രൈവറ്റ് സ്റ്റേ, ഫോട്ടോ സ്പോട്ടുകൾ എന്നിവ ഉൾപ്പെടുന്ന കപ്പിൾ പാക്കേജ്.",
+        highlights: ["Private Cab", "Couple Stay", "Tea Garden Visit", "Photo Spots", "Candle Light Option"],
+        itinerary: [
+          ["Day 1", "Pickup → Munnar view point → Resort check-in"],
+          ["Day 2", "Tea garden → Dam visit → Return travel"]
+        ],
+        includes: ["Resort stay", "Breakfast", "Cab", "Sightseeing", "Support"]
+      },
+      {
+        title: "ആലപ്പുഴ ഹൗസ്‌ബോട്ട്",
+        place: "Alappuzha, Kerala",
+        duration: "1 Day / 1 Night",
+        price: "₹6,999",
+        rating: "★ 4.9",
+        tag: "Houseboat",
+        image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80",
+        description:
+          "കായൽ സൗന്ദര്യം, ഹൗസ്‌ബോട്ട് സ്റ്റേ, കേരള ഭക്ഷണം, ശാന്തമായ കപ്പിൾ/ഫാമിലി അനുഭവം.",
+        highlights: ["Private Houseboat", "Kerala Meals", "Backwater Cruise", "AC Room", "Family Friendly"],
+        itinerary: [
+          ["Day 1", "Check-in → Backwater cruise → Lunch → Evening stay"],
+          ["Day 2", "Breakfast → Checkout"]
+        ],
+        includes: ["Houseboat stay", "Lunch", "Dinner", "Breakfast", "Cruise"]
+      },
+      {
+        title: "ദുബായ് ടൂർ പാക്കേജ്",
+        place: "Dubai, UAE",
+        duration: "4 Days / 3 Nights",
+        price: "₹49,999",
+        rating: "★ 4.8",
+        tag: "International",
+        image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80",
+        description:
+          "Burj Khalifa, Desert Safari, Marina Cruise, Dubai Mall, city tour എന്നിവ ഉൾപ്പെടുന്ന ഇന്റർനാഷണൽ പാക്കേജ്.",
+        highlights: ["Visa Assistance", "Hotel Stay", "Desert Safari", "City Tour", "Airport Transfer"],
+        itinerary: [
+          ["Day 1", "Dubai arrival → Hotel check-in → Marina cruise"],
+          ["Day 2", "City tour → Burj Khalifa → Dubai Mall"],
+          ["Day 3", "Desert Safari → BBQ dinner"],
+          ["Day 4", "Checkout → Airport drop"]
+        ],
+        includes: ["Hotel", "Airport transfer", "Tours", "Visa support", "Travel assistance"]
+      }
+    ];
+
+    let selectedIndex = 0;
+    let mobileActiveTab = "overview";
+
+    const desktopPackageGrid = document.getElementById("desktopPackageGrid");
+    const desktopPackageDetails = document.getElementById("desktopPackageDetails");
+    const desktopItinerary = document.getElementById("desktopItinerary");
+    const mobilePackageCards = document.getElementById("mobilePackageCards");
+    const mobileDetails = document.getElementById("mobileDetails");
+
+    function renderAll() {
+      renderDesktopCards();
+      renderDesktopDetails();
+      renderMobileCards();
+      renderMobileDetails();
+    }
+
+    function selectPackage(index) {
+      selectedIndex = index;
+      mobileActiveTab = "overview";
+      renderAll();
+
+      const firstTab = document.querySelector(".mobile-tab");
+      document.querySelectorAll(".mobile-tab").forEach(tab => tab.classList.remove("active"));
+      if (firstTab) firstTab.classList.add("active");
+    }
+
+    function renderDesktopCards() {
+      desktopPackageGrid.innerHTML = packages.map((item, index) => `
+        <button class="package-card ${index === selectedIndex ? "active" : ""}"
+          onclick="selectPackage(${index})"
+          style="background-image: url('${item.image}')">
+          <div class="package-card-content">
+            <h3>${item.title}</h3>
+            <p>${item.place}</p>
+            <div class="card-meta">
+              <span>${item.duration}</span>
+              <span>${item.price}</span>
+            </div>
+          </div>
+        </button>
+      `).join("");
+    }
+
+    function renderDesktopDetails() {
+      const item = packages[selectedIndex];
+
+      document.getElementById("desktopSelectedTitle").innerText = item.title;
+      document.getElementById("desktopSelectedDuration").innerText = item.duration;
+      document.getElementById("desktopSelectedPrice").innerText = item.price;
+
+      desktopPackageDetails.innerHTML = `
+        <h2>${item.title}</h2>
+        <div class="detail-image" style="background-image: url('${item.image}')">
+          <span class="detail-chip">${item.tag}</span>
+        </div>
+        <p>${item.description}</p>
+
+        <div class="highlight-grid">
+          ${item.highlights.map(h => `<div class="highlight">✓ ${h}</div>`).join("")}
+        </div>
+      `;
+
+      desktopItinerary.innerHTML = `
+        <h2>യാത്രാ പ്ലാൻ</h2>
+        <div class="timeline">
+          ${item.itinerary.map(row => `
+            <div class="timeline-item">
+              <span class="timeline-icon"></span>
+              <h3>${row[0]}</h3>
+              <p>${row[1]}</p>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderMobileCards() {
+      mobilePackageCards.innerHTML = packages.map((item, index) => `
+        <button class="mobile-package ${index === selectedIndex ? "active" : ""}"
+          onclick="selectPackage(${index})"
+          style="background-image: url('${item.image}')">
+          <div class="mobile-package-content">
+            <h3>${item.title}</h3>
+            <p>${item.place}</p>
+            <div class="card-meta">
+              <span>${item.duration}</span>
+              <span>${item.price}</span>
+            </div>
+          </div>
+        </button>
+      `).join("");
+    }
+
+    function showMobileTab(tab, clickedButton) {
+      mobileActiveTab = tab;
+
+      document.querySelectorAll(".mobile-tab").forEach(btn => {
+        btn.classList.remove("active");
+      });
+
+      clickedButton.classList.add("active");
+      renderMobileDetails();
+    }
+
+    function renderMobileDetails() {
+      const item = packages[selectedIndex];
+
+      document.getElementById("mobilePrice").innerText = item.price;
+      document.getElementById("mobileDuration").innerText = item.duration;
+
+      if (mobileActiveTab === "overview") {
+        mobileDetails.innerHTML = `
+          <div class="mobile-panel active">
+            <div class="mobile-detail-image" style="background-image: url('${item.image}')"></div>
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <div class="mobile-list">
+              <div>📍 ${item.place}</div>
+              <div>⭐ ${item.rating}</div>
+              <div>🕒 ${item.duration}</div>
+            </div>
+          </div>
+        `;
+      }
+
+      if (mobileActiveTab === "plan") {
+        mobileDetails.innerHTML = `
+          <div class="mobile-panel active">
+            <h3>യാത്രാ പ്ലാൻ</h3>
+            <div class="mobile-list">
+              ${item.itinerary.map(row => `<div><strong>${row[0]}</strong><br>${row[1]}</div>`).join("")}
+            </div>
+          </div>
+        `;
+      }
+
+      if (mobileActiveTab === "include") {
+        mobileDetails.innerHTML = `
+          <div class="mobile-panel active">
+            <h3>പാക്കേജിൽ ഉൾപ്പെടുന്നത്</h3>
+            <div class="mobile-list">
+              ${item.includes.map(x => `<div>✓ ${x}</div>`).join("")}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    renderAll();
+  </script>
+
+</body>
+</html>
